@@ -9,8 +9,8 @@ if [ ! -f "$DRUPAL_DIR/sites/default/settings.php" ]; then
 
   # Ensure files directory exists and set permissions
   mkdir -p $DRUPAL_DIR/sites/default/files
-  chown -R www-data:www-data $DRUPAL_DIR
-  chmod -R 755 $DRUPAL_DIR
+  # chown -R www-data:www-data $DRUPAL_DIR
+  # chmod -R 755 $DRUPAL_DIR
   
   # Copy default settings and set permissions
   cp $DRUPAL_DIR/sites/default/default.settings.php $DRUPAL_DIR/sites/default/settings.php

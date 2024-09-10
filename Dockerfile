@@ -40,6 +40,9 @@ RUN cd /var/www/html && composer require openai-php/client && composer require d
 RUN sed -i 's|/var/www/html|/var/www/html/web|g' /etc/apache2/sites-available/000-default.conf \
     && sed -i 's|/var/www/html|/var/www/html/web|g' /etc/apache2/apache2.conf
 
+# Enable output buffering in the PHP configuration
+RUN echo "output_buffering = 4096" >> /usr/local/etc/php/conf.d/docker-php-output_buffering.ini
+
 # Enable mod_rewrite for Drupal
 RUN a2enmod rewrite
 
