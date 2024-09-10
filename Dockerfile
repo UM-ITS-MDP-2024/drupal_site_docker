@@ -30,6 +30,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Add Composer's global bin directory to the PATH
 ENV PATH="/root/.composer/vendor/bin:${PATH}"
+ENV PATH="/var/www/html/vendor/bin:${PATH}"
 
 # Use Composer to install Drupal (baked into the image)
 RUN composer create-project drupal/recommended-project /var/www/html
