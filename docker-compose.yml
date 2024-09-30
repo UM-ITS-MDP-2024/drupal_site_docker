@@ -12,7 +12,7 @@ services:
       - DRUPAL_DB_NAME=drupal
       - DRUPAL_DB_USER=drupal
       - DRUPAL_DB_PASSWORD=drupal
-    restart: always
+    restart: unless-stopped
     depends_on:
       - db
 
